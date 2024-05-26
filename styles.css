@@ -86,6 +86,7 @@ main {
 header {
   background-color: black;
   color: hsl(128, 53%, 79%);
+  text-align: center;
 }
 
 h1,
