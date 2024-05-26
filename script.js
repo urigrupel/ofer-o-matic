@@ -92,7 +92,7 @@ function translate(text, lang) {
   }
   let result = '';
   for (const ch in text) {
-    const index = source.search(text[ch]);
+    const index = source.search(text[ch].toLowerCase());
     if (index === -1) {
       result = result.concat(text[ch]);
     } else {
@@ -129,11 +129,11 @@ function findTargetLang(text) {
   let he = 0;
   let en = 0;
   for (const ch in text) {
-    let index = enKeys.search(text[ch]);
+    let index = enKeys.search(text[ch].toLowerCase());
     if (index != -1) {
       en++;
     }
-    index = heKeys.search(text[ch]);
+    index = heKeys.search(text[ch].toLowerCase());
     if (index != -1) {
       he++;
     }
