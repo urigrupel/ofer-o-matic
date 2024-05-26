@@ -85,7 +85,7 @@ main {
 
 header {
   background-color: black;
-  color: lightblue;
+  color: hsl(128, 53%, 79%);
 }
 
 h1,
@@ -107,13 +107,13 @@ h3 {
 .action-container button {
   cursor: pointer;
   padding: 0.5em 1em;
-  background-color: hsl(240, 100%, 35%);
+  background-color: hsl(128, 100%, 25%);
   color: white;
   border-width: 0px;
 }
 
 .action-container button:hover {
-  background-color: hsl(240, 100%, 25%);
+  background-color: hsl(128, 100%, 15%);
 }
 
 .hidden {
