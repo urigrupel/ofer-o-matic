@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles-min.css">
+    <script src="script-min.js" defer></script>
+    <title>Ofer-o-Matic</title>
+</head>
+
+<body dir="rtl">
+    <header class="container">
+        <h1>Ofer-o-Matic</h1>
+        <p>כלים להתמודדות של עופר בעולם הגדול</p>
+    </header>
+    <main>
+        <section class="container">
+            <h2>מספרי לוטו מנצחים</h2>
+            <div class="output">
+                <p id="lottory-numbers"></p>
+                <button onclick="copyToClipboard('lottory-numbers')" aria-label="Copy to clipboard" class="copy-button">
+                    <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <g id="clipboard-icon">
+                            <title>Layer 1</title>
+                            <rect rx="4" height="25" width="25" y="10" x="20" stroke-width="2" stroke="#000"
+                                fill="#fff" />
+                            <rect rx="4" height="25" width="25" y="20" x="10" stroke-width="2" stroke="#000"
+                                fill="#fff" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div class="action-container">
+                <button onclick="getNumbers()">קבל מספרים</button>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>תקן טקסט</h2>
+            <fieldset class="radio-options">
+                <legend>בחר את השפה שהתכוונת לכתוב</legend>
+
+                <div id="lang-choices">
+                    <label>
+                        <input name="lang" type="radio" value="" checked />
+                        אוטומטי
+                    </label>
+                    <label>
+                        <input name="lang" type="radio" value="he" />
+                        עברית
+                    </label>
+                    <label>
+                        <input name="lang" type="radio" value="en" />
+                        אנגלית
+                    </label>
+                </div>
+            </fieldset>
+            <label>הכנס הודעה משובשת
+                <input type="text" id="input-message" placeholder="zv vhv tnur kvhu, cgcrh," class="text-input"
+                    dir="auto">
+            </label>
+            <div class="action-container">
+                <button onclick="getTranslation()">תקן הודעה</button>
+            </div>
+
+            <h3>הודעה מתוקנת</h3>
+            <div class="output">
+                <p id="output-message" dir="auto"></p>
+                <button onclick="copyToClipboard('output-message')" aria-label="Copy to clipboard" class="copy-button">
+                    <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <use href="#clipboard-icon" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>על מי להמר?</h2>
+            <p><label>יש הערב משחק של מכבי נגד <input type="text"></label>, מה לשים?</p>
+            <div class="action-container">
+                <button onclick="getAdvice()">קבל עצה</button>
+            </div>
+
+            <p id="bet-result" class="hidden">שים מכבי!</p>
+        </section>
+    </main>
+
+
+
+    <div id="tooltip" class="tooltip" aria-hidden="true"></div>
+</body>
+
+</html>
