@@ -48,6 +48,7 @@ h6 {
 
 :root {
   direction: rtl;
+  writing-mode: horizontal-tb;
 }
 
 .copy-button {
