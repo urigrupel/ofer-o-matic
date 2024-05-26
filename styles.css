@@ -62,6 +62,7 @@ h6 {
   border: 1px solid black;
   border-radius: 2px;
   align-items: center;
+  padding-inline-start: 1em;
 }
 
 .output p {
@@ -98,6 +99,7 @@ h3 {
 
 .text-input {
   width: 100%;
+  padding-inline-start: 1em;
 }
 
 .action-container {
