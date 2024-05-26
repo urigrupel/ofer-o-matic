@@ -76,6 +76,7 @@ h6 {
 .container {
   padding-inline: 4em;
   padding-block: 2em;
+  transition: padding 0.25s ease-in;
 }
 
 main {
@@ -135,4 +136,10 @@ h3 {
 
 .radio-options {
   width: fit-content;
+}
+
+@media only screen and (max-width: 50em) {
+  .container {
+    padding-inline: 0.5em;
+  }
 }
