@@ -146,36 +146,15 @@ function findTargetLang(text) {
 }
 
 function getReason() {
-  const options = [
-    {
-      alt: 'Dancing Bear',
-      src: 'images/bear.webp',
-      width: 450,
-      height: 500,
-    },
-    {
-      alt: 'Bling Bling',
-      src: 'images/bling.webp',
-      width: 500,
-      height: 500,
-    },
-    {
-      alt: 'Stevie Wonder',
-      src: 'images/stevie.webp',
-      width: 500,
-      height: 333,
-    },
-    {
-      alt: 'The Frankenstein',
-      src: 'images/frankenstein.webp',
-      width: 401,
-      height: 500,
-    },
-  ];
-  const img = document.getElementById('reason-img');
-  img.classList.remove('hidden');
-  index = randInt(0, options.length);
-  Object.entries(options[index]).forEach(([key, value]) => {
-    img.setAttribute(key, value);
-  });
+  const imgs = document.getElementsByClassName('reason-img');
+  const index = randInt(0, imgs.length);
+  let i = 0;
+  for (const img of imgs) {
+    if (i === index) {
+      img.classList.remove('none');
+    } else {
+      img.classList.add('none');
+    }
+    i++;
+  }
 }
