@@ -21,6 +21,10 @@ function getAdvice() {
   advice.classList.remove('hidden');
 }
 
+function compareNums(a, b) {
+  return a - b;
+}
+
 function getNumbers() {
   let options = range(1, 37);
   let strongOptions = range(1, 7);
@@ -33,6 +37,7 @@ function getNumbers() {
       strongOptions.splice(index, 1);
     }
   }
+  choice.sort(compareNums);
   const index = randInt(0, strongOptions.length);
   const strong = strongOptions.splice(index, 1)[0];
 
