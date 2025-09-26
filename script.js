@@ -85,6 +85,10 @@ function showTooltip(text, parent) {
   }, 1000);
 }
 
+function escapeRegex(str) {
+  return str.replace(/[.*+?^=!:${}()|\[\]\/\\]/g, '\\$&');
+}
+
 function translate(text, lang) {
   const enKeys = `zxcvbnm,./asdfghjkl;'qwertyuiop[]`;
   const heKeys = `זסבהנמצתץ.שדגכעיחלךף,/'קראטוןםפ][`;
@@ -96,10 +100,11 @@ function translate(text, lang) {
     target = enKeys;
   }
   let result = '';
-  for (const ch in text) {
-    const index = source.search(text[ch].toLowerCase());
+  for (const ch of text) {
+    const ch2 = escapeRegex(ch);
+    const index = source.search(ch2.toLowerCase());
     if (index === -1) {
-      result = result.concat(text[ch]);
+      result = result.concat(ch);
     } else {
       result = result.concat(target[index]);
     }
@@ -133,12 +138,13 @@ function findTargetLang(text) {
 
   let he = 0;
   let en = 0;
-  for (const ch in text) {
-    let index = enKeys.search(text[ch].toLowerCase());
+  for (const ch of text) {
+    const ch2 = escapeRegex(ch);
+    let index = enKeys.search(ch2.toLowerCase());
     if (index != -1) {
       en++;
     }
-    index = heKeys.search(text[ch].toLowerCase());
+    index = heKeys.search(ch2.toLowerCase());
     if (index != -1) {
       he++;
     }
